@@ -40,13 +40,13 @@ cd <repository-directory>
 
 ## 🖥 Backend Setup (Flask API)
 ### **2️⃣ Creating a Virtual Environment**
-Using **Conda** (Recommended):
+Using **Conda** 
 ```bash
 conda create --name news_env python=3.8 -y
 conda activate news_env
 ```
 
-Using **venv**:
+Using **venv**:(Recommended):
 ```bash
 python -m venv news_env
 source news_env/bin/activate  # macOS/Linux
@@ -65,10 +65,11 @@ Update the **`configs.yaml`** file with:
 topic: "Technology"
 location: "Delhi, India"
 ```
-Set up API keys inside `config.py`:
+Set up API keys inside `server.py`:
 ```python
 gemini_api_key = "your-gemini-api-key"
 serp_api_key = "your-serp-api-key"
+imgBB_api_key="your-api-key"
 ```
 
 ### **5️⃣ Running the Flask Backend**
@@ -88,34 +89,11 @@ npm install
 ```
 
 ### **7️⃣ Running the React Frontend**
-```bash
+
 npm run dev
 ```
-The frontend will be available at `http://localhost:3000/`.
+The frontend will be available at `http://localhost:5173/`.
 
----
-
-## 🚀 Running the Autonomous News Agent
-To fetch, process, summarize, and classify news articles:
-```bash
-python main.py
-```
-This script will:
-1. **Fetch news** articles based on location & topic.
-2. **Summarize** & classify them.
-3. **Store** them in `News.json`.
-
-### 🔄 Merging New News Data
-To merge newly fetched news:
-```bash
-python -c "from your_script import merge_and_save_news; merge_and_save_news()"
-```
-
----
-
-## 📂 Project Structure
-```
----
 
 ## 📌 Expected Output
 The final news articles will be stored in `News.json`:
